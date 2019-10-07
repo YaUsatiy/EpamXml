@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<b:bank xmlns:b="http://www.training.by/bank">  <!-- banks root element -->
+
+    <deposit deposit_id="dep-1">
+        <bank_name>NationalBankRepublicOfBelarus</bank_name>
+        <registration_country>Belarus</registration_country>
+        <deposit_type>demand</deposit_type>
+        <depositor>Depositor-1</depositor>
+        <account_id>1</account_id>
+        <amount_of_deposit>2500</amount_of_deposit>
+        <profitability>11</profitability>
+        <time_constraints>2020-01-01</time_constraints>
+    </deposit>
+    <deposit deposit_id="dep-2">
+        <bank_name>BelarusBank</bank_name>
+        <registration_country>Belarus</registration_country>
+        <deposit_type>fixed</deposit_type>
+        <depositor>Depositor-2</depositor>
+        <account_id>2</account_id>
+        <amount_of_deposit>1000</amount_of_deposit>
+        <profitability>12.1</profitability>
+        <time_constraints>2021-05-01</time_constraints>
+    </deposit>
+    <deposit deposit_id="dep-3">
+        <bank_name>RZB</bank_name>
+        <registration_country>Austria</registration_country>
+        <deposit_type>savings</deposit_type>
+        <depositor>Depositor-3</depositor>
+        <account_id>3</account_id>
+        <amount_of_deposit>5000</amount_of_deposit>
+        <profitability>3.4</profitability>
+        <time_constraints>2022-01-01</time_constraints>
+    </deposit>
+    <deposit deposit_id="dep-4">
+        <bank_name>NationalSwissBank</bank_name>
+        <registration_country>Switzerland</registration_country>
+        <deposit_type>accumulation</deposit_type>
+        <depositor>Depositor-4</depositor>
+        <account_id>4</account_id>
+        <amount_of_deposit>800</amount_of_deposit>
+        <profitability>2.8</profitability>
+        <time_constraints>2019-12-31</time_constraints>
+    </deposit>
+    <deposit deposit_id="dep-5">
+        <bank_name>CentralBank</bank_name>
+        <registration_country>Russia</registration_country>
+        <deposit_type>estimated</deposit_type>
+        <depositor>Depositor-5</depositor>
+        <account_id>5</account_id>
+        <amount_of_deposit>50000</amount_of_deposit>
+        <profitability>14.5</profitability>
+        <time_constraints>2022-01-01</time_constraints>
+    </deposit>
+    <deposit deposit_id="dep-6">
+        <bank_name>Bank-6</bank_name>
+        <registration_country>Country-6</registration_country>
+        <deposit_type>savings</deposit_type>
+        <depositor>Depositor-6</depositor>
+        <account_id>6</account_id>
+        <amount_of_deposit>1</amount_of_deposit>
+        <profitability>0.1</profitability>
+        <time_constraints>2016-01-01</time_constraints>
+    </deposit>
+    <deposit deposit_id="dep-7">
+        <bank_name>Bank-7</bank_name>
+        <registration_country>Country-7</registration_country>
+        <deposit_type>fixed</deposit_type>
+        <depositor>Depositor-7</depositor>
+        <account_id>7</account_id>
+        <amount_of_deposit>1</amount_of_deposit>
+        <profitability>0.1</profitability>
+        <time_constraints>2016-01-01</time_constraints>
+    </deposit>
+    <deposit deposit_id="dep-8">
+        <bank_name>Bank-8</bank_name>
+        <registration_country>Country-8</registration_country>
+        <deposit_type>accumulation</deposit_type>
+        <depositor>Depositor-8</depositor>
+        <account_id>8</account_id>
+        <amount_of_deposit>1</amount_of_deposit>
+        <profitability>0.1</profitability>
+        <time_constraints>2016-01-01</time_constraints>
+    </deposit>
+    <deposit deposit_id="dep-9">
+        <bank_name>Bank-9</bank_name>
+        <registration_country>Country-9</registration_country>
+        <deposit_type>savings</deposit_type>
+        <depositor>Depositor-9</depositor>
+        <account_id>9</account_id>
+        <amount_of_deposit>1</amount_of_deposit>
+        <profitability>0.1</profitability>
+        <time_constraints>2016-01-01</time_constraints>
+    </deposit>
+    <deposit deposit_id="dep-10">
+        <bank_name>Bank-10</bank_name>
+        <registration_country>Country-10</registration_country>
+        <deposit_type>demand</deposit_type>
+        <depositor>Depositor-10</depositor>
+        <account_id>10</account_id>
+        <amount_of_deposit>1</amount_of_deposit>
+        <profitability>0.1</profitability>
+        <time_constraints>2016-01-01</time_constraints>
+    </deposit>
+
+</b:bank>

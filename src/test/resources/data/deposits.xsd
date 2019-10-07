@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://www.training.by/bank"
+        xmlns="http://www.training.by/bank">
+
+    <xsd:element name="bank">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="deposit" maxOccurs="unbounded">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="bank_name" type="xsd:string"/>
+                            <xsd:element name="registration_country" type="xsd:string"/>
+                            <xsd:element name="deposit_type" type="Deposit_type"/>
+                            <xsd:element name="depositor" type="xsd:string"/>
+                            <xsd:element name="account_id" type="xsd:int"/>
+                            <xsd:element name="amount_of_deposit" type="xsd:decimal"/>
+                            <xsd:element name="profitability" type="xsd:decimal"/>
+                            <xsd:element name="time_constraints" type="xsd:date"/>
+                        </xsd:sequence>
+                        <xsd:attribute name="deposit_id" type="xsd:string"  use="required"/>
+                    </xsd:complexType>
+                </xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+        <xsd:unique name="unique-id">
+            <xsd:selector xpath="deposit"/>
+            <xsd:field xpath="@deposit_id"/>
+        </xsd:unique>
+    </xsd:element>
+
+    <xsd:simpleType name="Deposit_type">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="demand"/>
+            <xsd:enumeration value="fixed"/>
+            <xsd:enumeration value="estimated"/>
+            <xsd:enumeration value="accumulation"/>
+            <xsd:enumeration value="savings"/>     <!-- добавить металлический тип вклада -->
+        </xsd:restriction>
+    </xsd:simpleType>
+
+</xsd:schema>
