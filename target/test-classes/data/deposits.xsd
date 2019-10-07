@@ -11,9 +11,9 @@
                     <xsd:complexType>
                         <xsd:sequence>
                             <xsd:element name="bank_name" type="xsd:string"/>
-                            <xsd:element name="registration_country" type="xsd:string"/>
+                            <xsd:element name="registration_country" type="Country-type"/>
                             <xsd:element name="deposit_type" type="Deposit_type"/>
-                            <xsd:element name="depositor" type="xsd:string"/>
+                            <xsd:element name="depositor" type="Depositor_type"/>
                             <xsd:element name="account_id" type="xsd:int"/>
                             <xsd:element name="amount_of_deposit" type="xsd:decimal"/>
                             <xsd:element name="profitability" type="xsd:decimal"/>
@@ -30,13 +30,24 @@
         </xsd:unique>
     </xsd:element>
 
+    <xsd:complexType name="Depositor_type" mixed="true" >
+        <xsd:attribute name="depositor_status" type="xsd:string" use="optional" default="regular"/>
+    </xsd:complexType>
+
     <xsd:simpleType name="Deposit_type">
         <xsd:restriction base="xsd:string">
             <xsd:enumeration value="demand"/>
             <xsd:enumeration value="fixed"/>
             <xsd:enumeration value="estimated"/>
             <xsd:enumeration value="accumulation"/>
-            <xsd:enumeration value="savings"/>     <!-- добавить металлический тип вклада -->
+            <xsd:enumeration value="savings"/>
+            <xsd:enumeration value="metal"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="Country-type">
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="[a-zA-Z]{2,20}"/>
         </xsd:restriction>
     </xsd:simpleType>
 

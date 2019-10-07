@@ -16,7 +16,10 @@ public enum  DepositType {
     ACCUMULATION("accumulation"),
 
     @XmlEnumValue("savings")
-    SAVINGS("savings");
+    SAVINGS("savings"),
+
+    @XmlEnumValue("metal")
+    METAL("metal");
 
     private String value;
 

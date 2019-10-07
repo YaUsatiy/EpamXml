@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<b:bank xmlns:b="http://www.training.by/bank">  <!-- banks root element -->
+<b:bank xmlns:b="http://www.training.by/bank">
 
     <deposit deposit_id="dep-1">
         <bank_name>NationalBankRepublicOfBelarus</bank_name>
@@ -14,7 +14,7 @@
     <deposit deposit_id="dep-2">
         <bank_name>BelarusBank</bank_name>
         <registration_country>Belarus</registration_country>
-        <deposit_type>fixed</deposit_type>
+        <deposit_type>metal</deposit_type>
         <depositor>Depositor-2</depositor>
         <account_id>2</account_id>
         <amount_of_deposit>1000</amount_of_deposit>
@@ -25,7 +25,7 @@
         <bank_name>RZB</bank_name>
         <registration_country>Austria</registration_country>
         <deposit_type>savings</deposit_type>
-        <depositor>Depositor-3</depositor>
+        <depositor depositor_status="vip">Depositor-3</depositor>
         <account_id>3</account_id>
         <amount_of_deposit>5000</amount_of_deposit>
         <profitability>3.4</profitability>
@@ -53,7 +53,7 @@
     </deposit>
     <deposit deposit_id="dep-6">
         <bank_name>Bank-6</bank_name>
-        <registration_country>Country-6</registration_country>
+        <registration_country>USA</registration_country>
         <deposit_type>savings</deposit_type>
         <depositor>Depositor-6</depositor>
         <account_id>6</account_id>
@@ -63,7 +63,7 @@
     </deposit>
     <deposit deposit_id="dep-7">
         <bank_name>Bank-7</bank_name>
-        <registration_country>Country-7</registration_country>
+        <registration_country>Ukraine</registration_country>
         <deposit_type>fixed</deposit_type>
         <depositor>Depositor-7</depositor>
         <account_id>7</account_id>
@@ -73,7 +73,7 @@
     </deposit>
     <deposit deposit_id="dep-8">
         <bank_name>Bank-8</bank_name>
-        <registration_country>Country-8</registration_country>
+        <registration_country>Spain</registration_country>
         <deposit_type>accumulation</deposit_type>
         <depositor>Depositor-8</depositor>
         <account_id>8</account_id>
@@ -83,7 +83,7 @@
     </deposit>
     <deposit deposit_id="dep-9">
         <bank_name>Bank-9</bank_name>
-        <registration_country>Country-9</registration_country>
+        <registration_country>England</registration_country>
         <deposit_type>savings</deposit_type>
         <depositor>Depositor-9</depositor>
         <account_id>9</account_id>
@@ -93,7 +93,7 @@
     </deposit>
     <deposit deposit_id="dep-10">
         <bank_name>Bank-10</bank_name>
-        <registration_country>Country-10</registration_country>
+        <registration_country>USA</registration_country>
         <deposit_type>demand</deposit_type>
         <depositor>Depositor-10</depositor>
         <account_id>10</account_id>

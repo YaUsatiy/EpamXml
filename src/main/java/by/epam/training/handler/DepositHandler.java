@@ -14,6 +14,7 @@ public class DepositHandler extends DefaultHandler {
     private String registrationCountry;
     private DepositType depositType;
     private String depositor;
+    private String depositorStatus;
     private Integer accountId;
     private Double amountOfDeposit;
     private Double profitability;
@@ -34,6 +35,8 @@ public class DepositHandler extends DefaultHandler {
         currentElement = qName;
         if (qName.equals("deposit")){
             depositId = atts.getValue("deposit_id");
+        } else if (qName.equals(depositor)) {
+            depositorStatus = atts.getValue("depositor_status");
         }
     }
 
@@ -75,6 +78,7 @@ public class DepositHandler extends DefaultHandler {
             deposit.setRegistrationCountry(registrationCountry);
             deposit.setDepositType(depositType);
             deposit.setDepositor(depositor);
+            deposit.setDepositorStatus(depositorStatus);
             deposit.setAccountId(accountId);
             deposit.setAmountOfDeposit(amountOfDeposit);
             deposit.setProfitability(profitability);

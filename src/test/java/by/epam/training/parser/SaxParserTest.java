@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 
 import java.util.List;
 
-import static org.testng.Assert.*;
+import static org.testng.Assert.assertEquals;
 
 public class SaxParserTest {
     private static final String XML_PATH = "src/test/resources/data/deposits.xml";
@@ -28,8 +28,9 @@ public class SaxParserTest {
         Bank.Deposit deposit = deposits.get(1);
         assertEquals(deposit.getBankName(), "BelarusBank");
         assertEquals(deposit.getRegistrationCountry(), "Belarus");
-        assertEquals(deposit.getDepositType(), DepositType.FIXED);
+        assertEquals(deposit.getDepositType(), DepositType.METAL);
         assertEquals(deposit.getDepositor(), "Depositor-2");
+        assertEquals(deposit.getDepositorStatus(), "regular");
         assertEquals(deposit.getAccountId(), 2);
         assertEquals(deposit.getAmountOfDeposit(), 1000.0);
         assertEquals(deposit.getProfitability(), 12.1);

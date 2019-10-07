@@ -28,7 +28,7 @@ public class ValidatorXsd {
             Validator validator = schema.newValidator();
             validator.setErrorHandler(new DepositErrorHandler());
             // check is document correct
-            Source source = new StreamSource(xmlPath);
+            Source source = new StreamSource(ClassLoader.getSystemResourceAsStream(xmlPath));
             validator.validate(source);
             log.info("\"" + xmlPath + "\"" + " is valid.");
         } catch ( SAXException | IOException e ) {

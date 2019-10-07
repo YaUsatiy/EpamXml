@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 
 import java.util.List;
 
-import static org.testng.Assert.*;
+import static org.testng.Assert.assertEquals;
 
 public class StaxParserTest {
     private static final String XML_PATH = "data/deposits.xml";
@@ -26,11 +26,11 @@ public class StaxParserTest {
     public void staxParserPositiveTest() throws ParserException {
         List<Bank.Deposit> deposits = parser.parse(XML_PATH);
         Bank.Deposit deposit = deposits.get(2);
-        System.out.println(deposit);
         assertEquals(deposit.getBankName(), "RZB");
         assertEquals(deposit.getRegistrationCountry(), "Austria");
         assertEquals(deposit.getDepositType(), DepositType.SAVINGS);
         assertEquals(deposit.getDepositor(), "Depositor-3");
+        assertEquals(deposit.getDepositorStatus(), "vip");
         assertEquals(deposit.getAccountId(), 3);
         assertEquals(deposit.getAmountOfDeposit(), 5000.0);
         assertEquals(deposit.getProfitability(), 3.4);

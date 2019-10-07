@@ -30,6 +30,7 @@ public class DomParserTest {
         assertEquals(deposit.getRegistrationCountry(), "Belarus");
         assertEquals(deposit.getDepositType(), DepositType.DEMAND);
         assertEquals(deposit.getDepositor(), "Depositor-1");
+        assertEquals(deposit.getDepositorStatus(), "regular");
         assertEquals(deposit.getAccountId(), 1);
         assertEquals(deposit.getAmountOfDeposit(), 2500.0);
         assertEquals(deposit.getProfitability(), 11.0);

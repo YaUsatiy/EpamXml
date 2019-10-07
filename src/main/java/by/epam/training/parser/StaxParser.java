@@ -25,6 +25,7 @@ public class StaxParser implements Parser{
     private String registrationCountry;
     private DepositType depositType;
     private String depositor;
+    private String depositorStatus;
     private Integer accountId;
     private Double amountOfDeposit;
     private Double profitability;
@@ -69,6 +70,10 @@ public class StaxParser implements Parser{
                         case "depositor":
                             xmlEvent = xmlEventReader.nextEvent();
                             depositor = String.valueOf(xmlEvent.asCharacters().getData());
+                            Attribute statusAttribute = startElement.getAttributeByName(new QName("depositor_status"));
+                            if (statusAttribute != null) {
+                                depositorStatus = statusAttribute.getValue();
+                            }
                             break;
                         case "account_id":
                             xmlEvent = xmlEventReader.nextEvent();
@@ -97,6 +102,7 @@ public class StaxParser implements Parser{
                         deposit.setRegistrationCountry(registrationCountry);
                         deposit.setDepositType(depositType);
                         deposit.setDepositor(depositor);
+                        deposit.setDepositorStatus(depositorStatus);
                         deposit.setAccountId(accountId);
                         deposit.setAmountOfDeposit(amountOfDeposit);
                         deposit.setProfitability(profitability);

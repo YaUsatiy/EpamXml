@@ -66,7 +66,7 @@ public class DomParser implements Parser {
         return deposits;
     }
 
-    public Deposit parseSingleDeposit(Element element) {
+    private Deposit parseSingleDeposit(Element element) {
         Deposit result = new Deposit();
         String depositId = element.getAttribute("deposit_id");
         result.setDepositId(depositId);
@@ -78,6 +78,8 @@ public class DomParser implements Parser {
         result.setDepositType(depositType);
         String depositor = String.valueOf(element.getElementsByTagName("depositor").item(0).getTextContent());
         result.setDepositor(depositor);
+        String depositorStatus = element.getAttribute("depositor_status");
+        result.setDepositorStatus(depositorStatus);
         Integer accountId = Integer.parseInt(element.getElementsByTagName("account_id").item(0).getTextContent());
         result.setAccountId(accountId);
         Double amountOfDeposit = Double.valueOf(element.getElementsByTagName("amount_of_deposit").item(0).getTextContent());

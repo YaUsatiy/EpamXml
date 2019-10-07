@@ -7,9 +7,9 @@ import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertTrue;
 
 public class ValidatorXsdTest {
-    private static final String VALID_PATH = "src/main/resources/data/deposits.xml";
-    private static final String INVALID_PATH = "src/test/resources/invalidFile.xml";
-    private static final String XSD_PATH = "src/main/resources/data/deposits.xsd";
+    private static final String VALID_PATH = "data/deposits.xml";
+    private static final String INVALID_PATH = "data/invalidFile.xml";
+    private static final String XSD_PATH = "src/test/resources/data/deposits.xsd";
     private ValidatorXsd validatorXsd;
 
     @BeforeClass

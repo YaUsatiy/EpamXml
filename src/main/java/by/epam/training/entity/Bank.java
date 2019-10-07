@@ -14,9 +14,11 @@ public class Bank {
     @XmlElement(required = true)
     protected Set<Deposit> deposits;
 
+    Bank() {}
+
     public Set<Deposit> getDeposits() {
         if (deposits == null) {
-            deposits = new HashSet<Deposit>();
+            deposits = new HashSet<>();
         }
         return this.deposits;
     }
@@ -47,6 +49,9 @@ public class Bank {
         @XmlElement(required = true)
         protected String depositor;
 
+        @XmlAttribute(name = "depositor_status", required = true)
+        protected String depositorStatus;
+
         @XmlElement(name = "account_id")
         protected int accountId;
 
@@ -62,6 +67,8 @@ public class Bank {
 
         @XmlAttribute(name = "deposit_id", required = true)
         protected String depositId;
+
+        public Deposit() {}
 
         public String getBankName() {
             return bankName;
@@ -93,6 +100,17 @@ public class Bank {
 
         public void setDepositor(String depositor) {
             this.depositor = depositor;
+        }
+
+        public String getDepositorStatus() {
+            if (depositorStatus == null || depositorStatus.equals("")) {
+                return "regular";
+            }
+            return depositorStatus;
+        }
+
+        public void setDepositorStatus(String depositorStatus) {
+            this.depositorStatus = depositorStatus;
         }
 
         public int getAccountId() {
@@ -161,6 +179,10 @@ public class Bank {
             if (depositor != null ? !depositor.equals(otherDeposit.depositor) : otherDeposit.depositor != null) {
                 return false;
             }
+            if (depositorStatus != null ? !depositorStatus.equals(otherDeposit.depositorStatus)
+                                        : otherDeposit.depositorStatus != null) {
+                return false;
+            }
             if (profitability != null ? !profitability.equals(otherDeposit.profitability) : otherDeposit.profitability != null) {
                 return false;
             }
@@ -178,6 +200,7 @@ public class Bank {
             result = 31 * result + (registrationCountry != null ? registrationCountry.hashCode() : 0);
             result = 31 * result + (depositType != null ? depositType.hashCode() : 0);
             result = 31 * result + (depositor != null ? depositor.hashCode() : 0);
+            result = 31 * result + (depositorStatus != null ? depositorStatus.hashCode() : 0);
             result = 31 * result + accountId;
             result = 31 * result + (amountOfDeposit != null ? amountOfDeposit.hashCode() : 0);
             result = 31 * result + (profitability != null ? profitability.hashCode() : 0);
@@ -193,6 +216,7 @@ public class Bank {
             sb.append(", registrationCountry='").append(registrationCountry).append('\'');
             sb.append(", depositType=").append(depositType);
             sb.append(", depositor='").append(depositor).append('\'');
+            sb.append(", depositorStatus='").append(depositorStatus).append('\'');
             sb.append(", accountId=").append(accountId);
             sb.append(", amountOfDeposit=").append(amountOfDeposit);
             sb.append(", profitability=").append(profitability);
