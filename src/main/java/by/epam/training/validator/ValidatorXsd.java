@@ -13,15 +13,16 @@ import javax.xml.validation.SchemaFactory;
 import javax.xml.validation.Validator;
 import java.io.File;
 import java.io.IOException;
+import java.net.URISyntaxException;
 
-public class ValidatorXsd {
+class ValidatorXsd {
     private static final Logger log = LogManager.getLogger(ValidatorXsd.class);
     private static final String LANGUAGE = XMLConstants.W3C_XML_SCHEMA_NS_URI;
 
-    public boolean isValidXsd(String xsdPath, String xmlPath) {
-        File schemaLocation = new File(xsdPath);
+    boolean isValidXsd(String xsdPath, String xmlPath) {
+        SchemaFactory factory = SchemaFactory.newInstance(LANGUAGE);
         try {
-            SchemaFactory factory = SchemaFactory.newInstance(LANGUAGE);
+            File schemaLocation = new File(ClassLoader.getSystemResource(xsdPath).toURI());
             // Schema creation
             Schema schema = factory.newSchema(schemaLocation);
             // create validator on base of schema
@@ -31,7 +32,7 @@ public class ValidatorXsd {
             Source source = new StreamSource(ClassLoader.getSystemResourceAsStream(xmlPath));
             validator.validate(source);
             log.info("\"" + xmlPath + "\"" + " is valid.");
-        } catch ( SAXException | IOException e ) {
+        } catch (SAXException | IOException | URISyntaxException e ) {
             log.error("Can't get info from xml/xsd file!");
             return false;
         }

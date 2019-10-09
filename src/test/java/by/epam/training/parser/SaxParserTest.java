@@ -12,7 +12,7 @@ import java.util.List;
 import static org.testng.Assert.assertEquals;
 
 public class SaxParserTest {
-    private static final String XML_PATH = "src/test/resources/data/deposits.xml";
+    private static final String XML_PATH = "data/deposits.xml";
     private static final String INVALID_PATH = "data/invalidFile.xml";
     private static Parser parser;
 

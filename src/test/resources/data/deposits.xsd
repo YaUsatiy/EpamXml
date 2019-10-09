@@ -11,10 +11,10 @@
                     <xsd:complexType>
                         <xsd:sequence>
                             <xsd:element name="bank_name" type="xsd:string"/>
-                            <xsd:element name="registration_country" type="Country-type"/>
+                            <xsd:element name="registration_country" type="Country_type"/>
                             <xsd:element name="deposit_type" type="Deposit_type"/>
                             <xsd:element name="depositor" type="Depositor_type"/>
-                            <xsd:element name="account_id" type="xsd:int"/>
+                            <xsd:element name="account_id" type="Account_id_type"/>
                             <xsd:element name="amount_of_deposit" type="xsd:decimal"/>
                             <xsd:element name="profitability" type="xsd:decimal"/>
                             <xsd:element name="time_constraints" type="xsd:date"/>
@@ -45,9 +45,16 @@
         </xsd:restriction>
     </xsd:simpleType>
 
-    <xsd:simpleType name="Country-type">
+    <xsd:simpleType name="Country_type">
         <xsd:restriction base="xsd:string">
             <xsd:pattern value="[a-zA-Z]{2,20}"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="Account_id_type">
+        <xsd:restriction base="xsd:integer">
+            <xsd:minInclusive value="1"/>
+            <xsd:maxExclusive value="100"/>
         </xsd:restriction>
     </xsd:simpleType>
 

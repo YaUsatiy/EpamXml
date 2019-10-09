@@ -35,13 +35,15 @@ public class SaxParser implements Parser{
             SAXParser parser = parserFactory.newSAXParser();
             XMLReader reader = parser.getXMLReader();
             reader.setContentHandler(depositHandler);
-            reader.parse(fileName);
+            reader.parse(ClassLoader.getSystemResource(fileName).getFile());
         } catch (IOException e) {
             log.error("SAX : Wrong filepath!");
             throw new ParserException("SAX : Wrong filepath!", e);
         } catch (SAXException | ParserConfigurationException e) {
             log.error("SAX Parsing failure!");
             throw new ParserException("SAX : Parsing failure!", e);
+        } catch (Exception e) {
+            throw new ParserException("Unexpected error with path: " + fileName, e);
         }
         log.info("SAX : parsed successfully");
         return depositHandler.getDeposits();
